@@ -3,20 +3,12 @@
 {% block content %}
 <div class="features">
   <h1>Новости на сайте</h1>
-  {% filter upper%}
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis neque nemo voluptatem atque harum? Consequuntur recusandae corporis nihil corrupti commodi nisi nemo veritatis excepturi, magni possimus et eos quidem voluptatibus?</p>
-  {% endfilter %}
-  <button class="btn btn-warning"> {% filter upper%} На страницу про нас {% endfilter %}</button>
-  
-  {% for el in values %}
-    {% if el == 'some' %}
-        <p>{{ el|upper }}</p>
-    {% endif %}
-  
-  {% endfor %}
-  
-  {% for el in obj %}
-    <p>{{ el|upper }}</p>
+  {% for el in news%}
+  <div class="alert alert-warning">
+    <h3>{{ el.title }}</h3>
+    <p>{{ el.anons }}</p>
+  </div>
+
   {% endfor %}
 
 </div>
